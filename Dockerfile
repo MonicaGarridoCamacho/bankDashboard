@@ -11,8 +11,8 @@ COPY package.json /app
 RUN npm install
 
 COPY . /app
-USER node
-RUN npm run build --prod
+
+RUN npm run build
 
 #Segunda Etapa
 #FROM nginx:1.17.1-alpine
