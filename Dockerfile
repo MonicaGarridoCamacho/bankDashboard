@@ -2,7 +2,8 @@
 FROM registry.access.redhat.com/ubi8/nodejs-14:latest
 
 RUN mkdir -p /app
-
+RUN chown newuser /app
+USER newuser
 WORKDIR /app
 
 COPY package.json /app
