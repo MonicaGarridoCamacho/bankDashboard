@@ -5,14 +5,7 @@
   "author": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js", 
-    "ng": "ng",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "dev": "ng serve -o",
-    "prod": "ng build --prod"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "4.17.2"
