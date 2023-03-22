@@ -1,0 +1,24 @@
+<div class="product-wrapper" [ngClass]="{'highlight': product.product_description === selectedProduct}" (click)="select(product)">
+  <div class="product-icon">
+    <i class="fas fa-archive"></i>
+  </div>
+  <div class="product-details">
+    <div class="product-name">{{ product.product_description }}</div>
+  </div>
+  <div class="product-weight">
+    <i class="fas fa-balance-scale icon"></i>
+    <span class="data">
+      {{ product.weight }}
+    </span>
+    gr.
+  </div>
+  <div class="product-price">
+    <i class="fas fa-dollar-sign icon"></i>
+     <span class="data">
+      {{ product.listprice | number: '1.0-0' }}
+    </span>
+  </div>
+  <div class="product-filter">
+    <i class="fas fa-chevron-circle-right icon"></i>
+  </div>
+</div>

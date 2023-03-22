@@ -1,0 +1,240 @@
+// GLOBAL THEME
+
+// Colors
+$theme-color-white: #fff;
+$theme-color-white-dark: #eee;
+$theme-color-black: #000;
+$theme-color-black-light: #302e2f;
+$theme-color-black-lighter: #5E5A5C;
+
+
+// 563bff
+// 00c4f8
+// f6f8fa
+// fefefe
+
+$theme-color-background-1: #161515;
+$theme-color-background-2: #212121;
+$theme-color-background-3: #252525;
+$theme-color-background-4: #2f2f2f;
+
+// $theme-color-primary: #FFCA00;
+// $theme-color-primary-light: #FFDE5C;
+// $theme-color-primary-dark: #E0B400;
+
+$theme-color-secondary: #7692FF;
+$theme-color-secondary-light: #1B2CC1;
+$theme-color-secondary-dark: #14218F;
+
+$theme-color-accenture: #7500c0;
+$theme-color-accenture-light: #a100ff;
+$theme-color-accenture-dark: #460073;
+
+$theme-color-primary: $theme-color-accenture;
+$theme-color-primary-light: $theme-color-accenture-light;
+$theme-color-primary-dark: $theme-color-accenture-dark;
+
+$theme-color-grey: #F7F7F7;
+
+$theme-color-alternative: #F5F1ED;
+$theme-color-alternative-light: #F4F4F6;
+$theme-color-alternative-dark: #aaaaaa;
+
+$theme-color-states-error: #D81E5B;
+$theme-color-states-available: #70e000;
+
+$theme-color-body-bg: $theme-color-white;
+
+
+// Responsive calculations
+$theme-fontSize-base: 62.5%; // = 10px = 1rem; ----- using rem instead of px: 1.4rem = 14px
+
+
+// Spacing
+$spacing-ratio: 1.5;
+$theme-spacing: 1rem;
+$theme-spacingx2: $theme-spacing * $spacing-ratio;
+$theme-spacingx3: $theme-spacingx2 * $spacing-ratio;
+$theme-spacingx4: $theme-spacingx3 * $spacing-ratio;
+$theme-spacingx5: $theme-spacingx4 * $spacing-ratio;
+
+
+// Responsive Breakpoints
+$bp-xsmall: 480px; // Mobile
+$bp-small: 768px; // Tablets V
+$bp-small-max: 767px; // Tablets V
+// $bp-small-treshold: 767px;
+$bp-medium: 1024px; // Tablets H
+$bp-large: 1366px; // Desktop
+$bp-xlarge: 1920px; // Desktop++
+$bp-xxlarge: 2560px; // Desktop+++
+
+$mq-xsmall: "(min-width: #{$bp-xsmall})";
+$mq-small: "(min-width: #{$bp-small})";
+$mq-small-max: "(max-width: #{$bp-small})";
+$mq-medium: "(min-width: #{$bp-medium})";
+$mq-large: "(min-width: #{$bp-large})";
+$mq-xlarge: "(min-width: #{$bp-xlarge})";
+$mq-xxlarge: "(min-width: #{$bp-xxlarge})";
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+// z-index
+$zIndex: 1;
+$zIndex2: 2;
+$zIndex3: 3;
+$zIndexAbove: 9999;
+$zIndexBelow: -9999;
+
+// GLOBAL -------------------------
+$global-bgImage: '/assets/images/backgrounds/aicar1.jpg';
+$global-bgColor: $theme-color-background-2;
+$global-container-max-width: 1200px;
+$global-grid-gap: 40px;
+
+// PAGES --------------------------
+
+// Login
+$login-wrapper-bgColor: $theme-color-background-2;
+$login-wrapper-bgColor-mobile: $theme-color-background-1;
+
+$login-bgImage: '/assets/images/backgrounds/minimal-accenture.jpg';
+
+$login-intro-margin: 20%;
+$login-intro-hello-image-width: 60%;
+$login-intro-title-fontSize: 2.2rem;
+$login-intro-title-fontColor: $theme-color-primary;
+$login-intro-title-margin: $theme-spacingx2;
+$login-intro-description-fontSize: 1.4rem;
+$login-intro-description-fontColor: rgba($theme-color-white, .8);
+$login-intro-description-width: 75%;
+
+$login-form-fontColor: $theme-color-alternative-dark;
+$login-form-input-bgColor: $theme-color-white-dark;
+$login-form-input-fontColor: $theme-color-black;
+$login-form-input-placeholder-fontColor: $theme-color-black-light;
+$login-form-label-fontColor: $theme-color-primary;
+$login-form-link-fontColor: $theme-color-accenture;
+$login-form-link-fontColor-hover: $theme-color-black;
+
+$login-content-width: 600px;
+$login-description-title-color: $theme-color-black-light;
+$login-description-title-fontsize: 36px;
+$login-description-text-color: $theme-color-black;
+$login-description-text-fontsize: 14px;
+
+
+// COMPONENTS ---------------------
+
+// Header
+$header-bg-color: transparent;
+$header-height: 60px;
+$header-margin-top: $theme-spacingx2;
+$header-title-fontsize: 1.8rem;
+$header-title-fontweight: 600;
+$header-title-fontcolor: $theme-color-black;
+$header-nav-fontsize: 1.4rem;
+$header-nav-fontweight: 400;
+$header-nav-fontcolor: $theme-color-black;
+$header-nav-fontcolor_hover: $theme-color-primary;
+
+// Banner
+$banner-is-align-center: false; // false = align left ; true = align center
+$banner-margin-top: 300px;
+$banner-margin-top-mobile: 200px;
+$banner-margin-left: 0; // if align-center true change this to 0
+$banner-margin-left-mobile: $theme-spacingx2; // if align-center true change this to 0
+$banner-text-fontsize: 6rem;
+$banner-text-fontsize-mobile: 3rem;
+$banner-text-fontweight: 300;
+$banner-text-fontcolor: $theme-color-white;
+$banner-separator-color: $theme-color-primary;
+$banner-separator-distance: 40px;
+$banner-logo-width: 50%;
+$banner-logo-max-width: 230px;
+
+// Chat
+$border-radius: 10px;
+
+$chat-bgColor: $theme-color-white;
+
+$chat-header-bgColor: $theme-color-white;
+$chat-header-height: 70px;
+
+$chat-pulse-animation-bgColor: $theme-color-primary;
+$chat-toggler-fontColor: $theme-color-white;
+$chat-toggler-text-bgColor: $theme-color-primary-dark;
+$chat-toggler-icon-bgColor: $theme-color-primary;
+$chat-toggler-icon-width: 60px;
+$chat-toggler-icon-fontSize: 2.4rem;
+
+$theme-color-chat-bg: $chat-bgColor;
+$theme-color-chat-messsage-user: $theme-color-black;
+$theme-color-chat-messsage-user-text: $theme-color-white;
+$theme-color-chat-messsage-bot: #f2f1ef;
+$theme-color-chat-messsage-bot-text: $theme-color-black;
+$theme-color-chat-messsage-agent: #67809f;
+$theme-color-chat-messsage-agent-text: $theme-color-white;
+$theme-color-chat-input-bg: $theme-color-alternative-light;
+$theme-color-chat-input-border: $theme-color-alternative;
+$theme-color-chat-input-text: $theme-color-black-light;
+$theme-color-chat-input-placeholder: $theme-color-black-light;
+$theme-color-chat-input-icon: $theme-color-black;
+$theme-color-chat-input-icon-hover: $theme-color-primary;
+
+
+$chat-pulse-animation-bgColor: $theme-color-primary;
+$chat-toggler-fontColor: $theme-color-white;
+$chat-toggler-text-bgColor: $theme-color-primary-dark;
+$chat-toggler-icon-bgColor: $theme-color-primary;
+$chat-toggler-icon-width: 60px;
+$chat-toggler-avatar-width: 110px;
+$chat-toggler-icon-fontSize: 2.4rem;
+
+
+$chat-header-avatar-color: $theme-color-primary;
+$chat-header-avatar-size: 4rem;
+$chat-header-botname-fontColor: $theme-color-primary-dark;
+$chat-header-botname-fontWeight: 700;
+$chat-header-botname-fontSize: 1.4rem;
+$chat-header-intro-fontColor: $theme-color-alternative-dark;
+$chat-header-intro-fontSize: 1.1rem;
+
+$chat-header-close-fontColor: $theme-color-alternative-dark;
+$chat-header-close-fontColor-hover: $theme-color-primary-dark;
+
+$chat-form-height: 50px;
+$chat-form-bgColor: $theme-color-alternative-light;
+$chat-form-fontColor: $theme-color-black;
+$chat-form-fontColor-hover: $theme-color-primary;
+
+$chat-body-height: calc(100% - #{$chat-header-height} - #{$chat-form-height});
+$chat-message-bot-bgColor: $theme-color-primary;
+$chat-message-bot-fontColor: $theme-color-white;
+$chat-message-user-bgColor: $theme-color-alternative-light;
+$chat-message-user-fontColor: $theme-color-black;
+
+// Menu
+$menu-width: 80px;
+$menu-border-color: $theme-color-alternative;
+$menu-icon-width: $menu-width;
+$menu-icon-height: 60px;
+$menu-link-fontsize: 14px;
+$menu-link-color: $theme-color-black;
+$menu-link-color-hover: $theme-color-primary;
+$menu-link-label-bg: $theme-color-black-light;
+$menu-link-label-color: $theme-color-white;
+
+// Cards
+$card-bg: $theme-color-grey;
+$card-border-radius: 6px;
+$card-title-height: 50px;
+
+
+// Fonts
+@import './fonts';
+
+// Mixins
+@import './mixins/card';
+@import './mixins/buttons';
+@import './mixins/page';
+@import './mixins/shadows';

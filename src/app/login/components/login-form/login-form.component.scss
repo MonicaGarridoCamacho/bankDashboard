@@ -1,0 +1,122 @@
+@import "../../../styles/theme";
+
+.login-form-wrapper {
+  display: flex;
+  justify-content: center;
+  color: $login-form-fontColor;
+}
+
+.login-form-container {
+  width: 90%;
+}
+
+.login-form-header {
+  text-align: center;
+  margin-bottom: $theme-spacingx4;
+  line-height: 20px;
+}
+
+.login-form-header__title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: $theme-spacingx2;
+}
+
+.login-form-header__description {
+  font-size: 1.2rem;
+}
+
+
+.login-form-group {
+  & + .login-form-group {
+    margin-top: $theme-spacingx3;
+
+    &.login-form-group--has-button {
+      margin-top: $theme-spacingx5;
+    }
+  }
+}
+
+.login-form-group--has-button {
+  text-align: center;
+  margin-bottom: $theme-spacingx2;
+}
+
+// Used only when adding inputs for username and password instead of IBM AppID
+// .login-form-group__label {
+//   display: block;
+//   font-weight: bold;
+//   letter-spacing: .5px;
+//   margin-bottom: $theme-spacing;
+//   color: $login-form-label-fontColor;
+// }
+
+// .login-form-group__input {
+//   display: block;
+//   width: calc(100% - #{$theme-spacingx2});
+//   height: 40px;
+//   color: $login-form-input-fontColor;
+//   background-color: $login-form-input-bgColor;
+//   border: 0;
+//   border-radius: 5px;
+//   padding-left: $theme-spacing;
+//   padding-right: $theme-spacing;
+
+//     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+//     color:rgba($login-form-input-placeholder-fontColor, .5);
+//   }
+
+//   &::-moz-placeholder { /* Firefox 19+ */
+//     color:rgba($login-form-input-placeholder-fontColor, .5);
+//   }
+
+//   &::-ms-input-placeholder { /* IE 10+ */
+//     color:rgba($login-form-input-placeholder-fontColor, .5);
+//   }
+
+//   &::-moz-placeholder { /* Firefox 18- */
+//     color:rgba($login-form-input-placeholder-fontColor, .5);
+//   }
+
+//   &:-webkit-autofill {
+//     -webkit-box-shadow: 0 0 0 30px $login-form-input-bgColor inset;
+//     color: $login-form-input-placeholder-fontColor;
+//   }
+// }
+
+
+.login-form-error {
+  margin-top: $theme-spacingx3;
+  text-align: center;
+  color: $theme-color-states-error;
+}
+
+.login-form-access {
+  color: $login-form-link-fontColor;
+  text-decoration: none;
+  margin-left: $theme-spacingx4;
+  transition: .4s all ease-in-out;
+
+  &:hover {
+    color: $login-form-link-fontColor-hover;
+  }
+}
+
+@media only screen and (min-width: #{$bp-xsmall}) {
+}
+
+@media only screen and (min-width: #{$bp-medium}) {
+
+  .login-form-container {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: #{$bp-large}) {
+
+  .login-form-container {
+    width: 70%;
+  }
+
+}

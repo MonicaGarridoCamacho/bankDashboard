@@ -1,0 +1,44 @@
+<div class="customers-wrapper">
+
+  <div class="customers-header">
+
+    <div class="customers-header__left">
+      <h2 class="customers-header__title">
+        Customers
+      </h2>
+      <div class="customers-header__details">
+        {{ customers.length }} customers
+      </div>
+    </div>
+
+    <div class="customers-header__right">
+      <button class="customers-header__button">
+        <i class="fas fa-plus icon"></i>
+        Add customer
+      </button>
+    </div>
+
+  </div>
+
+  <div class="customers-filter">
+    <div class="customers-filter-box">
+      <i class="fas fa-search customers-filter-icon"></i>
+      <input
+        type="text"
+        class="customers-filter-input"
+        placeholder="Filter by customer lastname"
+        [(ngModel)]="nameFilter"
+      />
+    </div>
+  </div>
+
+  <div class="customers-list custom-scroll">
+    <!-- <pre>{{customers | json}}</pre> -->
+    <div class="customers-list-item" *ngFor="let customer of customers | filterCustomerName: nameFilter">
+      <app-customer [customer]="customer" (selectCustomer)="select($event)"></app-customer>
+    </div>
+  </div>
+
+</div>
+
+

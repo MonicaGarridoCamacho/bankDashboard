@@ -1,0 +1,11 @@
+---
+applications:
+- name: zeta-dashboard
+  memory: 128M
+  disk_quota: 1024M
+  instances: 1
+  path: ./dist
+  buildpacks:
+    - staticfile_buildpack
+  env:
+    FORCE_HTTPS: true

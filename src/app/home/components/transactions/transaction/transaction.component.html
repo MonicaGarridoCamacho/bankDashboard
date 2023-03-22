@@ -1,0 +1,11 @@
+<div class="transaction-wrapper" (click)="select(transaction)">
+    <div class="transaction-icon">
+      <i class="fas fa-money-check-alt"></i>
+    </div>
+    <div class="transaction-id">#{{ transaction.transactionId }}</div>
+    <div class="transaction-amount">${{ transaction.amount }}</div>
+    <div class="transaction-info">Description: {{ transaction.transactionInformation }}</div>
+    <div class="transaction-address">Address: {{ transaction.addressLine }}</div>
+    <div class="transaction-account">Account: {{ transaction.accountId }}</div>
+  </div>
+  

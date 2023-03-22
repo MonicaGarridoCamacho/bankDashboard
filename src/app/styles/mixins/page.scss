@@ -1,0 +1,17 @@
+@mixin page-wrapper {
+  height: 100vh;
+  width: 100%;
+  // overflow: hidden;
+}
+
+@mixin page-header {
+  height: $header-height;
+  width: 100%;
+  padding: 0 $global-grid-gap;
+  box-sizing: border-box;
+}
+
+
+@mixin page-container {
+  height: calc(100vh - #{$header-height});
+}

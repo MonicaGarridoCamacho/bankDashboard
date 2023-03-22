@@ -1,0 +1,52 @@
+<div class="home-wrapper">
+
+  <div class="home-notification" *ngIf="showNotification">
+    <div class="notification-close" (click)="toggleNotification()">
+      <i class="fas fa-times icon"></i>
+    </div>
+    <div class="notification-message">
+      {{ notification }}
+    </div>
+  </div>
+
+  <div class="home-menu">
+    <ul class="home-menu-nav">
+      <li class="home-menu-item">
+        <i class="fas fa-home icon"></i>
+      </li>
+      <li class="home-menu-item">
+        <i class="fas fa-users icon"></i>
+      </li>
+      <li class="home-menu-item active" (click)="selectTab('transactions')">
+        <i class="fas fa-money-check-alt icon"></i>
+      </li>
+      
+      <!--<li class="home-menu-item" (click)="selectTab('transactions')">
+        <i class="far fa-address-card icon"></i>
+      </li>
+      <li class="home-menu-item">
+        <i class="fas fa-shopping-basket icon"></i>
+      </li> -->
+    </ul>
+  </div>
+
+  <div class="home-container">
+    
+    <div *ngIf="(currentTab === 'transactions') && database">
+      <app-transactions [transactions]="database"></app-transactions>
+    </div>
+
+    <!-- <div *ngIf="(currentTab === 'customers') && database">
+      <app-customers [customers]="database.customers" (onSelectCustomer)="handleCustomer($event)"></app-customers>
+    </div> -->
+
+    <!-- <div *ngIf="currentTab === 'transactions'">
+      <app-customer-transactions [customer]="currentCustomer" [notification]="showNotification"></app-customer-transactions>
+    </div> -->
+
+    <!-- <h2>Zeta Dashboard</h2>
+    <pre>{{database | json}}</pre> -->
+
+  </div>
+
+</div>

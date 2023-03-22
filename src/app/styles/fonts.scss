@@ -1,0 +1,47 @@
+// Accenture Branding Font GRAPHIK: light - regular - medium - black
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/Graphik-Light.woff2') format('woff2'),
+      url('/assets/fonts/Graphik-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/Graphik-Regular.woff2') format('woff2'),
+      url('/assets/fonts/Graphik-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/Graphik-Medium.woff2') format('woff2'),
+      url('/assets/fonts/Graphik-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/Graphik-Bold.woff2') format('woff2'),
+      url('/assets/fonts/Graphik-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/assets/fonts/Graphik-Black.woff2') format('woff2'),
+      url('/assets/fonts/Graphik-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+$fontFamilyAccenture: 'Graphik', sans-serif;
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap');
+
+$fontFamiliyTitle: 'Montserrat', sans-serif;

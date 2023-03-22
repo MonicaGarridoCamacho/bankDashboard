@@ -1,0 +1,38 @@
+<div class="login-form-wrapper">
+
+  <div class="login-form-container">
+
+    <header class="login-form-header">
+      <!-- <h2 class="login-form-header__title">{{ copy.login.form.title }}</h2> -->
+      <p class="login-form-header__description" *ngIf="!appIdError">
+        {{ copy.login.form.intro }}
+
+      </p>
+      <p class="login-form-header__description" *ngIf="appIdError">
+        {{ copy.login.form.error.connection }}
+      </p>
+    </header>
+
+    <div
+    class="login-form-group login-form-group--has-button"
+    *ngIf="appIdLoaded && !appIdError"
+    >
+      <app-button
+      leftIcon="fas fa-user-lock"
+      text="{{ copy.login.form.button }}"
+      type="primary button-primary--login"
+      (click)="onLogin()"
+      >
+      </app-button>
+
+     <a class="login-form-access" href="mailto:ruben.gomez@accenture.com?Subject=Request access for demo&body=Please, could you please provide access for AIRBG demos?">Request access</a>
+
+    </div>
+
+
+
+    <div class="login-form-error" *ngIf="appIdUnauthorized">
+      {{ appIdMessage }}
+    </div>
+  </div>
+</div>

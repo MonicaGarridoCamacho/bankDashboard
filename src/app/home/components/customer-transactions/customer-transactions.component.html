@@ -1,0 +1,141 @@
+<div class="customer-transactions-wrapper">
+
+  <div class="customer-transactions-summary">
+
+    <h2 class="customer-transactions-title">Customer summary</h2>
+
+    <div class="customer-transactions-profile">
+      <div class="profile-name">{{ customer.firstname }} {{ customer.lastname }}</div>
+      <div class="profile-address">{{ customer.street_address }}</div>
+      <div class="profile-city">{{ customer.city }}</div>
+      <div class="profile-state">{{ customer.state }}, {{ customer.zip }}</div>
+    </div>
+
+    <div class="customer-transactions-costs">
+      <div class="cost-item cost-item--highlight">
+        <i class="far fa-gem cost-item__icon"></i>
+        <h3 class="cost-item__title">
+          Total Payments
+        </h3>
+        <p class="cost-item__price">$ {{ salesAmount | number: '1.0-0' }}</p>
+      </div>
+      <div class="cost-item">
+        <i class="far fa-money-bill-alt cost-item__icon"></i>
+        <h3 class="cost-item__title">
+          Number of Payments
+        </h3>
+        <p class="cost-item__price">{{ salesCount }}</p>
+      </div>
+      <div class="cost-item">
+        <i class="far fa-money-bill-alt cost-item__icon"></i>
+        <h3 class="cost-item__title">
+          Number of Products
+        </h3>
+        <p class="cost-item__price">{{ productsCount }}</p>
+      </div>
+    </div>
+
+    <div class="customer-transactions-products">
+      <div class="products-header">
+        <div class="products-header__title">
+          Products
+        </div>
+        <div class="products-header__filter">
+          <div class="products-filter-box">
+            <i class="fas fa-search products-filter-icon"></i>
+            <input
+              type="text"
+              class="products-filter-input"
+              placeholder="Product name"
+              [(ngModel)]="productNameFilter"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="products-container" >
+        <div class="products-loading" *ngIf="areProductsLoading">
+          <i class="fas fa-circle-notch fa-spin icon"></i> Loading products
+        </div>
+        <div class="products-for custom-scroll" *ngIf="!areProductsLoading">
+          <div class="product-item" *ngFor="let product of products | filterProductName: productNameFilter">
+            <app-product [product]="product" [selectedProduct]="currentProduct?.product_description" (onSelectProduct)="selectProduct($event)"></app-product>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="customer-transactions-sales">
+
+    <div class="customer-transactions-sales__header">
+      <div class="sales-header-balance">
+        <span class="title">
+          Balance:
+        </span>
+        <span class="data">
+          $ {{ salesAmount | number: '1.0-0' }}
+        </span>
+      </div>
+      <div class="sales-header-menu">
+        <ul class="sales-header-menu__nav">
+          <li class="sales-header-menu__item">
+            <i class="far fa-bell"></i>
+          </li>
+          <li class="sales-header-menu__item">
+            <i class="far fa-user"></i>
+          </li>
+          <li class="sales-header-menu__item">
+            <i class="fas fa-bars"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="customer-transactions-sales__container">
+
+      <div class="sales-container-header">
+        <i class="fas fa-shopping-basket"></i>
+        Recent transactions
+      </div>
+
+      <div class="sales-container-wrapper custom-scroll">
+
+        <div class="transactions" *ngFor="let sales of salesByDate" [ngClass]="{'is-empty': checkEmptySalesDate(sales.date)}">
+          <div class="transaction-date">
+            <i class="far fa-calendar-alt"></i>
+            {{ sales.date }}
+          </div>
+          <div class="transactions-content">
+            <div class="transactions-item" *ngFor="let sale of sales.data | filterProductName: currentProduct?.product_description">
+              <div class="transactions-item__product">
+                {{ sale.product_description }}
+              </div>
+              <div class="transactions-item__store">
+                {{ sale.storename }}
+              </div>
+              <div class="transactions-item__quantity">
+                x {{ sale.quantity | number: '1.0-0' }}
+              </div>
+              <div class="transactions-item__price">
+                $ {{ sale.cost | number: '1.0-0' }}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+</div>

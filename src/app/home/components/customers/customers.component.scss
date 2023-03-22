@@ -1,0 +1,81 @@
+@import '../../../styles/theme';
+
+.customers-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-rows: 15vh 15vh 70vh;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: $theme-spacingx4;
+}
+
+.customers-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.customers-header__title {
+  font-size: 34px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.customers-header__details {
+  margin-top: $theme-spacingx2;
+  color: $theme-color-alternative-dark;
+}
+
+.customers-header__button {
+  @include theme-button-primary;
+  font-size: 11px;
+
+  .icon {
+    margin-right: 5px;
+  }
+}
+
+.customers-filter-box {
+  position: relative;
+  background-color: rgba($theme-color-primary, .25);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: $theme-spacingx3;
+}
+
+.customers-filter-input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgba($theme-color-primary, .8);
+  box-sizing: border-box;
+  padding-left: $theme-spacingx5;
+  padding-right: $theme-spacingx2;
+
+  &:hover {
+    outline-color: $theme-color-black;
+  }
+
+  &:focus {
+    outline-color: $theme-color-black;
+  }
+}
+
+.customers-filter-icon {
+  position: absolute;
+  top: 36px;
+  left: 40px;
+  color: $theme-color-alternative-dark;
+}
+
+.customers-list {
+  overflow-y: auto;
+  max-height: 62vh;
+  padding-right: 8px;
+}
+
+.customers-list-item {
+  & + .customers-list-item {
+    border-top: 1px solid rgba($theme-color-black, .05);
+  }
+}
+

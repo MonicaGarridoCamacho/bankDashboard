@@ -1,0 +1,25 @@
+<div class="main-menu-wrapper">
+  <div class="main-menu-logo">
+      <i class="fa fa-bars icon"></i>
+  </div>
+  <ul class="main-menu-list">
+    <li class="main-menu-list__item" [routerLink]="['home']">
+      <i class="fas fa-home icon"></i>
+      <span class="label">Dashboard</span>
+    </li>
+    <li class="main-menu-list__item" [routerLink]="['skill']">
+      <i class="fas fa-search icon"></i>
+      <span class="label">Skill analysis</span>
+    </li>
+     <li class="main-menu-list__item" [routerLink]="['tester']">
+      <i class="fas fa-laptop-code icon"></i>
+      <span class="label">Tester</span>
+    </li>
+  </ul>
+  <div class="main-menu-chat-toggle" [ngClass]="{'is-open': isChatOpen, 'is-closed': !isChatOpen}" (click)="toggleChat()">
+    <span>
+      <i class="far fa-comment-alt open" ></i>
+      <i class="far fa-times-circle close" *ngIf="isChatOpen"></i>
+    </span>
+  </div>
+</div>

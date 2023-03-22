@@ -1,0 +1,38 @@
+@mixin card {
+  // background-color: $card-bg;
+  // height: 100%;
+  // width: 100%;
+  border-radius: $card-border-radius;
+}
+
+@mixin card-wrapper {
+  padding: $theme-spacingx3;
+  background-color: $theme-color-white;
+  border-radius: 20px;
+  box-shadow: 0 9px 15px rgb(0 0 0 / .1);
+}
+
+@mixin card-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: $card-title-height;
+  font-family: $fontFamiliyTitle;
+  font-size: 13px;
+  letter-spacing: .5px;
+  font-weight: 800;
+  padding: 0 $theme-spacingx3;
+  // margin-bottom: $theme-spacingx3;
+}
+
+@mixin card-container {
+  height: calc(100% - #{$card-title-height} - (#{$theme-spacingx3 * 2}));
+  padding: $theme-spacingx3;
+}
+
+
+
+@media only screen and (min-width: #{$bp-medium}) {
+}
+
+@media only screen and (min-width: #{$bp-large}) {}

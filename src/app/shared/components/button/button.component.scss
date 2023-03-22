@@ -1,0 +1,43 @@
+@import "../../../styles/theme.scss";
+
+// TODO - move here all button styles
+
+
+.button-primary {
+  @include theme-button-primary;
+}
+
+.button-alternative {
+  @include theme-button-alternative;
+}
+
+.button-dark {
+  @include theme-button-dark;
+}
+
+.button-primary--login {
+  border-color: $theme-color-accenture;
+  background-color: $theme-color-accenture;
+
+  &:hover {
+    background-color: $theme-color-accenture-dark;
+    border-color: darken($theme-color-accenture-dark, .5)
+  }
+}
+
+.button-icon--left {
+  margin-right: 5px;
+}
+
+.button-icon--right {
+  margin-left: 5px;
+}
+
+.small {
+  height: 30px !important;
+}
+
+.fixed-width-40 {
+  width: 40%;
+  background-color: $card-bg;
+}

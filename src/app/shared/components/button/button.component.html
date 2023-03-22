@@ -1,0 +1,11 @@
+<button class="button-{{ type }}">
+  <span class="button-icon button-icon--left" *ngIf="leftIcon">
+    <i  class="{{ leftIcon }}"></i>
+  </span>
+  <span>
+    {{ text }}
+  </span>
+   <span class="button-icon button-icon--right" *ngIf="rightIcon">
+    <i class="{{ rightIcon }}"></i>
+   </span>
+</button>

@@ -1,0 +1,78 @@
+
+
+
+
+  <div class="transactions-wrapper">
+
+    <div class="transactions-summary customer-transactions-summary">
+
+        <div class="customer-transactions-profile">
+          <div class="profile-name">John Doe</div>
+          <div class="profile-address">Street 1234</div>
+          <div class="profile-city">Chicago</div>
+          <div class="profile-state">Illinois, 60613</div>
+        </div>
+    
+        <div class="customer-transactions-costs">
+          <div class="cost-item cost-item--highlight">
+            <i class="far fa-gem cost-item__icon"></i>
+            <h3 class="cost-item__title">
+              Total Payments
+            </h3>
+            <p class="cost-item__price">$ {{ totalPayments }}</p>
+            <!-- <p class="cost-item__price">$ {{ salesAmount | number: '1.0-0' }}</p> -->
+          </div>
+          <div class="cost-item">
+            <i class="far fa-address-card cost-item__icon"></i>
+            <h3 class="cost-item__title">
+              Number of Accounts
+            </h3>
+            <p class="cost-item__price">{{ totalAccounts }}</p>
+          </div>
+          <div class="cost-item">
+            <i class="far fa-money-bill-alt cost-item__icon"></i>
+            <h3 class="cost-item__title">
+              Number of Transactions
+            </h3>
+            <p class="cost-item__price">{{ totalTransactions }}</p>
+          </div>
+        </div>
+    
+        
+      </div>
+    
+    
+    
+    <div class="transactions-header">
+    
+      <div class="transactions-header__left">
+        <h2 class="transactions-header__title">
+          Transactions
+        </h2>
+        <div class="transactions-header__details">
+          {{ transactions.length }} transactions
+        </div>
+      </div>
+    
+      <div class="transactions-header__right">
+        <button class="transactions-header__button">
+          <i class="fas fa-plus icon"></i>
+          Add transaction
+        </button>
+      </div>
+    
+    </div>
+    
+    
+    <div class="transactions-list custom-scroll">
+        <!-- <pre>{{customers | json}}</pre> -->
+        <div class="transactions-list-item" *ngFor="let transaction of transactions">
+          <app-transaction [transaction]="transaction"></app-transaction>
+        </div>
+    </div>
+
+  
+  </div>
+  
+  
+  

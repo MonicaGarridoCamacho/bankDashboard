@@ -1,0 +1,82 @@
+@mixin theme-button {
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700;
+  font-size: 12px;
+  transition: .3s all ease-in-out;
+  padding-left: $theme-spacingx2;
+  padding-right: $theme-spacingx2;
+}
+
+@mixin theme-button-primary {
+
+  @include theme-button;
+
+  border: 2px solid $theme-color-primary;
+  background-color: $theme-color-primary;
+  color: $theme-color-white;
+
+  &:hover {
+    background-color: $theme-color-black;
+    color: $theme-color-white;
+    border-color: darken($theme-color-black, .5)
+  }
+
+  &:focus {
+
+  }
+
+}
+
+
+@mixin theme-button-dark {
+
+  @include theme-button;
+
+  border: 2px solid black;
+  background-color: black;
+  color: $theme-color-white;
+
+  &:hover {
+    background-color: #999898;
+    border-color: darken(#999898, .5)
+  }
+
+  &:focus {
+
+  }
+
+}
+
+@mixin theme-button-alternative {
+
+  @include theme-button;
+
+  border: 2px solid $theme-color-black-light;
+  background-color: transparent;
+  color: $theme-color-black-light;
+
+  &:hover {
+    background-color: $theme-color-black-light;
+    color: $theme-color-white;
+  }
+
+  &:focus {
+
+  }
+
+  &:disabled {
+    border-color: $theme-color-alternative-dark;
+    color: $theme-color-alternative-dark;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+}

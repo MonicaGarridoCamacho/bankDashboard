@@ -1,0 +1,52 @@
+@import '../../../../styles/theme';
+
+.customer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  box-sizing: border-box;
+  padding-left: $theme-spacingx2;
+  padding-right: $theme-spacingx2;
+  font-size: 13px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $theme-color-black;
+    border-radius: 5px;
+    color: $theme-color-white;
+
+    .customer-icon {
+      color: $theme-color-primary-light;
+    }
+  }
+}
+
+.customer-icon {
+  width: 3%;
+  color: $theme-color-primary;
+}
+
+.customer-id {
+  width: 3%;
+}
+
+.customer-name {
+  width: 34%;
+  font-weight: 500;
+  letter-spacing: .5px;
+}
+
+.customer-city {
+  width: 20%;
+  text-align: right;
+}
+
+.customer-address {
+  width: 20%;
+}
+
+.customer-state {
+  width: 20%;
+  text-align: right;
+}

@@ -1,0 +1,110 @@
+@import '../../styles/theme';
+@import '../../styles/fonts';
+
+.main-menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-menu-logo {
+  height: $menu-icon-height;
+  width: $menu-icon-width;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-menu-list {
+  list-style: none;
+  margin: 0;
+}
+
+
+.main-menu-list__item {
+  color: $menu-link-color;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    // background-color: $theme-color-secondary;
+    color: $menu-link-color-hover;
+
+    .label {
+      display: flex;
+    }
+  }
+
+  .icon {
+    height: $menu-icon-height;
+    width: $menu-icon-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .label {
+    display: none;
+    position: absolute;
+    top: calc(50% - (calc(#{$menu-icon-height} / 2.5)));
+    left: calc(100% + #{$theme-spacingx2});
+    background-color: $menu-link-label-bg;
+    height: 50px;
+    width: max-content;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 $theme-spacing;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    color: $menu-link-label-color;
+
+    &::after {
+      position: absolute;
+      top: calc(50% - 10px);
+      left: -7px;
+      content: "";
+      width: 15px;
+      height: 15px;
+      background-color: $menu-link-label-bg;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.main-menu-chat-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $menu-icon-height;
+  width: $menu-icon-width;
+  font-size: 18px;
+  overflow: hidden;
+  color: $menu-link-color;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+
+  &:hover {
+    color: $menu-link-color-hover;
+  }
+
+  &.is-closed {
+    .open { display: inline; }
+    .close { display: none; }
+  }
+
+  &.is-open {
+    background-color: $theme-color-white;
+    color: $theme-color-states-error;
+
+    &:hover {
+      background-color: $theme-color-states-error;
+      color: $theme-color-white;
+    }
+
+    .open { display: none; }
+    .close { display: inline; }
+  }
+}

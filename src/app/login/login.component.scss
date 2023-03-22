@@ -1,0 +1,35 @@
+@import '../styles/theme.scss';
+
+.login-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: $theme-spacingx5;
+}
+
+.login-logo__image {
+  max-width: 150px;
+}
+
+
+// @media only screen and (min-width: #{$bp-xsmall}) {
+// }
+
+@media only screen and (min-width: #{$bp-medium}) {
+
+  .login-wrapper {
+    background-image: url($login-bgImage);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+}
+
+// @media only screen and (min-width: #{$bp-large}) {
+// }

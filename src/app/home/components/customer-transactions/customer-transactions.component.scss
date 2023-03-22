@@ -1,0 +1,301 @@
+@import '../../../styles/theme';
+
+.customer-transactions-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.customer-transactions-summary {
+  height: 100%;
+  box-sizing: border-box;
+  padding: $theme-spacingx4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customer-transactions-sales {
+  height: 100%;
+  background-color: $theme-color-white;
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  height: 100vh;
+}
+
+
+.customer-transactions-title {
+  height: 10%;
+  width: 100%;
+  font-size: 34px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.customer-transactions-profile {
+  height: 15%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: $theme-spacingx2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: $theme-color-white;
+  background-image: url(/assets/images/zeta/customer-isometric-accenture.jpg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+  @include box-shadow;
+}
+
+.customer-transactions-costs {
+  height: 15%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.customer-transactions-products {
+  height: 50vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+
+.profile-name {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.profile-address {
+  font-size: 12px;
+}
+
+.profile-city {
+  font-size: 12px;
+  color: $theme-color-alternative-dark;
+}
+
+.profile-state {
+  font-size: 12px;
+  color: $theme-color-alternative-dark;
+}
+
+.cost-item {
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: $theme-spacingx3;
+  background-color: $theme-color-white;
+  @include box-shadow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cost-item__icon {
+  color: $theme-color-primary;
+  font-size: 24px;
+}
+
+.cost-item__title {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.cost-item__price {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.cost-item--highlight {
+  background-color: $theme-color-primary;
+
+  .cost-item__icon {
+    color: $theme-color-white;
+  }
+
+  .cost-item__title {
+    color: $theme-color-alternative-dark;
+  }
+
+  .cost-item__price {
+    color: $theme-color-white;
+  }
+}
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: $theme-spacingx2;
+}
+
+.products-header__title {}
+.products-header__filter {}
+
+.products-container {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.products-for {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.product-item {
+
+  & + .product-item {
+    margin-top: $theme-spacingx2;
+  }
+}
+
+
+.customer-transactions-sales__header {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  height: 80px;
+  background-color: $theme-color-primary;
+}
+
+.sales-header-balance {
+  background-color: $theme-color-black;
+  color: $theme-color-white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 0 $theme-spacingx4;
+
+  .title {
+    color: $theme-color-alternative-dark;
+    margin-right: $theme-spacingx2;
+  }
+}
+
+.sales-header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sales-header-menu__nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.sales-header-menu__item {
+  font-size: 16px;
+  color: $theme-color-white;
+}
+
+
+.customer-transactions-sales__container {
+  box-sizing: border-box;
+  padding: $theme-spacingx4;
+}
+
+.sales-container-header {
+  margin-bottom: $theme-spacingx4;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.sales-container-wrapper {
+  box-sizing: border-box;
+  max-height: 78vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+
+.transactions {
+
+  margin-bottom: $theme-spacingx4;
+
+  &.is-empty {
+    display: none;
+  }
+}
+
+.transaction-date {
+  font-size: 12px;
+  letter-spacing: .5px;
+  font-weight: 500;
+  margin-bottom: $theme-spacingx2;
+  padding-bottom: $theme-spacingx2;
+  border-bottom: 1px solid $theme-color-alternative;
+}
+
+.transaction-content {}
+
+.transactions-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 12px;
+
+  & + .transactions-item {
+    margin-top: $theme-spacing;
+  }
+}
+
+.transactions-item__product {
+  width: 30%;
+}
+
+.transactions-item__store {
+  width: 30%;
+  color: $theme-color-alternative-dark;
+}
+
+.transactions-item__quantity {
+  width: 20%;
+  // color: $theme-color-alternative-dark;
+}
+
+.transactions-item__price {
+  width: 20%;
+  text-align: right;
+  color: $theme-color-primary-light;
+}
+
+.products-filter-box {}
+
+.products-filter-icon {
+  margin-right: 5px;
+}
+
+.products-filter-input {
+  background: transparent;
+  height: 25px;
+  border: 0;
+  border-bottom: 1px solid $theme-color-alternative-dark;
+  box-sizing: border-box;
+  padding: 0 5px;
+
+  &:focus,
+  &:active {
+    border-bottom-color: $theme-color-primary;
+    outline: 0;
+  }
+}
+
+.products-loading {
+  color: $theme-color-alternative-dark;
+  font-size: 13px;
+
+  .icon {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+}

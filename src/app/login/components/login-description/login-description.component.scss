@@ -1,0 +1,28 @@
+@import '../../../styles/theme.scss';
+
+.login-description-wrapper {
+  max-width: $login-content-width;
+}
+
+.login-description-title {
+  font-size: 36px;
+  color: $login-description-title-color;
+  text-align: center;
+  margin-bottom: $theme-spacingx4;
+}
+
+.login-description-title {
+  font-size: $login-description-title-fontsize;
+  color: $login-description-title-color;
+  text-align: center;
+  margin-bottom: $theme-spacingx4;
+}
+
+
+.login-description-text {
+  font-size: $login-description-text-fontsize;
+  color: $login-description-text-color;
+  text-align: justify;
+  margin-bottom: $theme-spacingx5;
+  line-height: 1.5;
+}

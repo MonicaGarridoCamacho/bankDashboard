@@ -1,0 +1,19 @@
+@import '../styles/theme.scss';
+@import '../styles/fonts.scss';
+
+
+.layout-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: $theme-color-body-bg;
+}
+
+.layout-container {
+  width: 100vw;
+  height: 100vh;
+  transition: width .5s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
