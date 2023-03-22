@@ -7,6 +7,7 @@ WORKDIR /app
 
 COPY package.json /app
 
+USER node
 RUN npm install
 
 COPY . /app
