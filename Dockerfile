@@ -7,11 +7,11 @@ WORKDIR /app
 
 COPY package.json /app
 
-USER node
+
 RUN npm install
 
 COPY . /app
-
+USER node
 RUN npm run build --prod
 
 #Segunda Etapa
