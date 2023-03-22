@@ -1,23 +1,19 @@
-# Install the app dependencies in a full Node docker image
+#Primera Etapa
 FROM node:14-alpine as build-step
 
-# Copy package.json, and optionally package-lock.json if it exists
-COPY package.json package-lock.json* ./
+RUN mkdir -p /app
 
-# Install app dependencies
-RUN \
-  if [ -f package-lock.json ]; then npm ci; \
-  else npm install; \
-  fi
+WORKDIR /app
 
-# Copy the dependencies into a Slim Node docker image
-FROM registry.access.redhat.com/ubi8/nodejs-16-minimal:latest
+COPY package.json /app
 
-# Install app dependencies
-COPY --from=0 /opt/app-root/src/node_modules /opt/app-root/src/node_modules
-COPY . /opt/app-root/src
+RUN npm install
 
-ENV NODE_ENV production
-ENV PORT 3001
+COPY . /app
 
-CMD ["npm", "start"]
+RUN npm run build --prod
+
+#Segunda Etapa
+FROM nginx:1.17.1-alpine
+#Si estas utilizando otra aplicacion cambia PokeApp por el nombre de tu app
+COPY --from=build-step /app/dist /usr/share/nginx/html
