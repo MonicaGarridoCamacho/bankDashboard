@@ -1,6 +1,4 @@
-# Install the app dependencies in a full Node docker image
-FROM registry.access.redhat.com/ubi8/nodejs-16:latest
-
+FROM node:14-alpine as build-step
 RUN mkdir -p /app
 
 WORKDIR /app
