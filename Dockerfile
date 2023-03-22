@@ -1,15 +1,17 @@
-FROM node:14-alpine as build-step
-RUN mkdir -p /app
+# Install the app dependencies in a full Node docker image
+FROM registry.access.redhat.com/ubi8/nodejs-16:latest
 
-WORKDIR /app
+# Copy package.json, and optionally package-lock.json if it exists
+COPY package.json package-lock.json* ./
 
-COPY package.json /app
+# Install app dependencies
+RUN \
+  if [ -f package-lock.json ]; then npm ci; \
+  else npm install; \
+  fi
 
-RUN npm install
-
-COPY . /app
-
-RUN npm run build --prod
+# Copy the dependencies into a Slim Node docker image
+FROM registry.access.redhat.com/ubi8/nodejs-16-minimal:latest
 
 # Install app dependencies
 COPY --from=0 /opt/app-root/src/node_modules /opt/app-root/src/node_modules
