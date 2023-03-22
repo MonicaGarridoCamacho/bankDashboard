@@ -1,5 +1,5 @@
 # Install the app dependencies in a full Node docker image
-FROM registry.access.redhat.com/ubi8/nodejs-16:latest
+FROM node:14-alpine as build-step
 
 # Copy package.json, and optionally package-lock.json if it exists
 COPY package.json package-lock.json* ./
