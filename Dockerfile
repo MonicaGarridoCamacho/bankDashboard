@@ -15,13 +15,13 @@ COPY . /app
 RUN npm run build --prod
 
 #Segunda Etapa
-#FROM nginx:1.17.1-alpine
-# COPY --from=build-step /app/dist /usr/share/nginx/html
+FROM registry.access.redhat.com/ubi8/nginx-120:latest
+COPY --from=build-step /app/dist /usr/share/nginx/html
 
 #Alternativa NodeJs server
-WORKDIR /app
+#WORKDIR /app
 
-COPY ./deployment .
+#COPY ./deployment .
 # EXPOSE 8080
 
-CMD ["node", "server.js"]
+#CMD ["node", "server.js"]
